@@ -1,18 +1,13 @@
-# =========================
 # FILE: index.md
-# =========================
 ---
 layout: page
 title: Welcome to my blog
 permalink: /
 ---
-
 <div class="hero">
   <div class="hero__content">
     <h1>Level up your GitHub Pages</h1>
-    <p class="lead">
-      Short notes, guides, and experiments on development and tools.
-    </p>
+    <p class="lead">Short notes, guides, and experiments on development and tools.</p>
     <p>
       <a class="btn" href="{{ '/about/' | relative_url }}">About this site</a>
       <a class="btn btn--secondary" href="{{ '/contact/' | relative_url }}">Contact</a>
@@ -21,8 +16,6 @@ permalink: /
 </div>
 
 ## Latest posts
-If you add posts in `_posts/`, they’ll render below automatically:
-
 <ul class="post-list">
   {%- for post in site.posts limit:5 -%}
     <li>
@@ -31,6 +24,6 @@ If you add posts in `_posts/`, they’ll render below automatically:
     </li>
   {%- endfor -%}
   {%- if site.posts == empty -%}
-    <li>No posts yet — create one in `_posts/`.</li>
+    <li>No posts yet — create one in <code>_posts/</code>.</li>
   {%- endif -%}
 </ul>
