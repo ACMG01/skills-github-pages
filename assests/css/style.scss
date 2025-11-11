@@ -1,0 +1,42 @@
+# STYLES (SCSS overrides). The two '---' lines at the top are required.
+
+# FILE: assets/css/style.scss
+---
+---
+@import "minima/skins/auto";
+@import "minima/initialize";
+
+/* Why: keep line length comfortable */
+.wrapper { max-width: 980px; }
+
+/* Hero */
+.hero {
+  padding: 4rem 1rem;
+  border-radius: 1rem;
+  background: var(--color-canvas-subtle);
+  margin: 1rem 0 2rem;
+}
+.hero__content { text-align: center; }
+.lead { font-size: 1.2rem; opacity: 0.9; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: .6rem;
+  text-decoration: none;
+  background: var(--color-accent-fg);
+  color: var(--color-accent-emphasis-contrast, #fff);
+  transition: transform .06s ease;
+  margin-right: .5rem;
+}
+.btn:hover { transform: translateY(-1px); opacity: .95; }
+.btn--secondary { background: transparent; border: 1px solid var(--color-border-default); color: inherit; }
+
+/* Footer & code blocks */
+.site-footer { font-size: .9rem; opacity: .8; }
+.highlight pre, pre.highlight { border-radius: .6rem; padding: 1rem; }
+
+@media (max-width: 640px) {
+  .hero { padding: 2.5rem 1rem; }
+}
