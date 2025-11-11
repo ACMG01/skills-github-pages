@@ -1,33 +1,28 @@
-# =========================
 # FILE: _config.yml
-# =========================
 title: IT skills-github-pages
 description: Tips, notes, and experiments
 url: https://acmgllc.github.io
 baseurl: /IT-skills-github-pages
 theme: minima
 
-# Navbar shows these pages (must exist as files at repo root)
 header_pages:
   - index.md
   - about.md
   - contact.md
 
-# Light/dark auto skin
 minima:
   skin: auto
   social_links:
     - platform: github
       user_url: https://github.com/ACMGLLC
-    # - platform: linkedin
-    #   user_url: https://www.linkedin.com/in/YOUR_PROFILE/
 
-# Useful defaults
 markdown: kramdown
 kramdown:
   input: GFM
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+
 
 
