@@ -3,7 +3,7 @@ layout: page
 title: Support us
 permalink: /support/
 ---
-<p>Thanks for reading! If this project helps you, here are ways to support it.</p>
+<p>Thanks for reading! If this project helps you, here are a few ways to support us.</p>
 
 <div class="grid grid-2">
   <div class="card lift">
