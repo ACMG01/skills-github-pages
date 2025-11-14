@@ -1,4 +1,4 @@
-# FILE: index.md
+# FILE: index.md  (must start with --- on line 1)
 ---
 layout: page
 title: Welcome to my blog
