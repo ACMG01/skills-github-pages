@@ -4,6 +4,3 @@ layout: post
 title: "Hello World"
 ---
 First post to confirm the blog pipeline works.
-
-# ─────────────────────────────────────────────────────────────
-# STYLES (SCSS overrides). The two '---' lines at the top are required.
