@@ -1,0 +1,119 @@
+# =========================================
+# FILE: assets/dark.scss
+# Why: only the dark skin variables; layered over main.css when enabled.
+# =========================================
+---
+---
+@import "minima/skins/dark";
+
+# =========================================
+# FILE: assets/main.scss  (keep your existing content; add the block below)
+# Must start with the two lines of front-matter.
+# =========================================
+---
+---
+@import "minima/skins/auto";
+@import "minima";
+
+/* ... keep your existing styles here ... */
+
+/* ===== Dark-mode toggle styles ===== */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: .6rem; padding: .35rem .6rem;
+  background: var(--color-canvas-subtle);
+  font: inherit; line-height: 1; cursor: pointer;
+}
+.theme-toggle:hover { transform: translateY(-1px); transition: transform .06s ease; }
+.theme-toggle__icon { width: 16px; height: 16px; opacity: .8; }
+.theme-toggle__label { font-size: .9rem; opacity: .9; }
+
+/* Optional: when user forces dark/light, add a subtle badge color */
+html[data-theme="dark"] .theme-toggle { background: rgba(255,255,255,.06); }
+html[data-theme="light"] .theme-toggle { background: rgba(0,0,0,.03); }
+
+/* Respect system colors in forms, etc., when following system */
+html[data-theme="system"] { color-scheme: light dark; }
+
+# =========================================
+# FILE: _includes/custom-head.html
+# Add this to the bottom of the file (keep your favicon/meta already in here)
+# =========================================
+<!-- Dark skin stylesheet (disabled by default; JS will toggle it) -->
+<link id="dark-skin" rel="stylesheet" href="{{ '/assets/dark.css' | relative_url }}" disabled>
+
+<script>
+/* Minimal, dependency-free theme controller (light/dark/system) */
+(function () {
+  var KEY = 'theme';                                 // 'light' | 'dark' | 'system'
+  var STATES = ['system', 'light', 'dark'];          // cycle order
+  var root = document.documentElement;
+  var darkLink = null;
+
+  function resolveState() {
+    try { return (localStorage.getItem(KEY) || 'system'); }
+    catch (_) { return 'system'; }
+  }
+
+  function apply(state) {
+    root.dataset.theme = state;
+    if (!darkLink) darkLink = document.getElementById('dark-skin');
+
+    // Enable dark variables only when forcing 'dark'.
+    // For 'system' we let main.css (auto skin) and prefers-color-scheme decide.
+    if (darkLink) {
+      darkLink.disabled = (state !== 'dark');
+    }
+  }
+
+  function next(state) {
+    var i = STATES.indexOf(state);
+    return STATES[(i + 1) % STATES.length];
+  }
+
+  function labelFor(state) {
+    return state === 'dark' ? 'Dark' : state === 'light' ? 'Light' : 'System';
+  }
+
+  function iconFor(state) {
+    // simple inline SVGs
+    var sun = '<svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.48 0l1.79-1.8 1.41 1.41-1.8 1.79-1.4-1.4zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 12H1v0h3v0zm19 0h-3v0h3v0zM6.76 19.16l-1.42 1.42-1.79-1.8 1.41-1.41 1.8 1.79zM19.16 17.24l1.4 1.4-1.79 1.8-1.41-1.41 1.8-1.79zM12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>';
+    var moon = '<svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>';
+    var auto = '<svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 2v14a7 7 0 010-14z"/></svg>';
+    return state === 'dark' ? moon : state === 'light' ? sun : auto;
+  }
+
+  function mountButton(state) {
+    var btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.type = 'button';
+    btn.id = 'theme-toggle';
+    btn.setAttribute('aria-label', 'Toggle color mode');
+    btn.title = 'Color mode: ' + labelFor(state);
+    btn.innerHTML = iconFor(state) + '<span class="theme-toggle__label">' + labelFor(state) + '</span>';
+
+    btn.addEventListener('click', function () {
+      var nextState = next(resolveState());
+      try { localStorage.setItem(KEY, nextState); } catch (_) {}
+      apply(nextState);
+      btn.title = 'Color mode: ' + labelFor(nextState);
+      btn.querySelector('.theme-toggle__label').textContent = labelFor(nextState);
+      btn.querySelector('svg').outerHTML = iconFor(nextState);
+    });
+
+    // Insert into the Minima header nav
+    var target = document.querySelector('.site-nav .trigger') || document.querySelector('.site-header .wrapper');
+    if (target) target.appendChild(btn);
+  }
+
+  var initial = resolveState();
+  apply(initial);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ mountButton(initial); });
+  } else {
+    mountButton(initial);
+  }
+})();
+</script>
