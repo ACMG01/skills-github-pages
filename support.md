@@ -5,9 +5,10 @@ permalink: /support/
 ---
 Thanks for reading! If this project helps you, here are a few ways to support it.
 
-### One-time support
+### One-time support | Donate
 <p>
   <a class="btn" href="https://www.paypal.me/YOUR_PAYPAL_ID">PayPal</a>
+  <br>
   <a class="btn btn--secondary" href="https://ko-fi.com/YOUR_KOFI">Ko-fi</a>
 </p>
 
