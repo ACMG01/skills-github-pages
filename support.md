@@ -10,6 +10,7 @@ permalink: /support/
     <h3>One-time</h3>
     <p class="btn-row">
       <a class="btn" href="https://www.paypal.me/YOUR_PAYPAL_ID">PayPal</a>
+      <br><br/>
       <a class="btn btn--ghost" href="https://ko-fi.com/YOUR_KOFI">Ko-fi</a>
     </p>
   </div>
