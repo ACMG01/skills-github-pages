@@ -80,3 +80,35 @@
 
 /* Mobile hero spacing */
 @media (max-width: 640px) { .hero { padding: 2.4rem 1rem; } }
+
+
+/* ===== Dark-mode toggle styles ===== */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: .6rem; padding: .35rem .6rem;
+  background: var(--color-canvas-subtle);
+  font: inherit; line-height: 1; cursor: pointer;
+}
+.theme-toggle:hover { transform: translateY(-1px); transition: transform .06s ease; }
+.theme-toggle__icon { width: 16px; height: 16px; opacity: .8; }
+.theme-toggle__label { font-size: .9rem; opacity: .9; }
+
+/* Optional: when user forces dark/light, add a subtle badge color */
+html[data-theme="dark"] .theme-toggle { background: rgba(255,255,255,.06); }
+html[data-theme="light"] .theme-toggle { background: rgba(0,0,0,.03); }
+
+/* Respect system colors in forms, etc., when following system */
+html[data-theme="system"] { color-scheme: light dark; }
+
+
+
+
+
+
+
+
+
+
+
+
