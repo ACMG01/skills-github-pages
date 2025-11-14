@@ -1,11 +1,7 @@
-# FILE: contact.md
+# FILE: about.md
 ---
 layout: page
-title: Contact
-permalink: /contact/
+title: About
+permalink: /about/
 ---
-- GitHub: [@ACMGLLC](https://github.com/ACMGLLC)  
-- Issues/feedback: open an issue on this repository.
-
-# ─────────────────────────────────────────────────────────────
-# BLOG (make sure the folder name starts with an underscore)
+I write concise how-tos and keep personal notes here. Built with **GitHub Pages** and the **minima** theme.
