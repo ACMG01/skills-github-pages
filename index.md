@@ -1,8 +1,4 @@
 ---
-layout: page
-title: Welcome to my blog
-permalink: /
----
 <div class="hero">
   <div class="hero__content">
     <h1>Level up your GitHub Pages</h1>
