@@ -10,7 +10,7 @@ permalink: /
     <p>
       <a class="btn" href="{{ '/about/' | relative_url }}">About this site</a>
       <a class="btn btn--secondary" href="{{ '/contact/' | relative_url }}">Contact</a>
-       <a class="btn" href="{{ '/support/' | relative_url }}">Support us</a>   <!-- new -->
+       <a class="btn" href="{{ '/support/' | relative_url }}">Support Us | Donate</a>   <!-- new -->
     </p>
   </div>
 </div>
