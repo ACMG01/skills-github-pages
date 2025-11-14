@@ -1,7 +1,8 @@
-# FILE: about.md
+# FILE: contact.md
 ---
 layout: page
-title: About
-permalink: /about/
+title: Contact
+permalink: /contact/
 ---
-I write concise how-tos and keep personal notes here. Built with **GitHub Pages** and the **minima** theme.
+- GitHub: [@ACMGLLC](https://github.com/ACMGLLC)
+- Issues/feedback: open an issue on this repository.
