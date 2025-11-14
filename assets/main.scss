@@ -4,10 +4,10 @@
 @import "minima/skins/auto";
 @import "minima";
 
-/* keep line length comfortable */
+/* Why: keep line length comfortable */
 .wrapper { max-width: 980px; }
 
-/* hero */
+/* Hero */
 .hero {
   padding: 4rem 1rem;
   border-radius: 1rem;
@@ -17,7 +17,7 @@
 .hero__content { text-align: center; }
 .lead { font-size: 1.2rem; opacity: .9; }
 
-/* buttons */
+/* Buttons */
 .btn {
   display: inline-block;
   padding: .6rem 1rem;
@@ -31,8 +31,13 @@
 .btn:hover { transform: translateY(-1px); opacity: .95; }
 .btn--secondary { background: transparent; border: 1px solid var(--color-border-default); color: inherit; }
 
-/* footer & code blocks */
+/* Footer & code blocks */
 .site-footer { font-size: .9rem; opacity: .8; }
 .highlight pre, pre.highlight { border-radius: .6rem; padding: 1rem; }
 
 @media (max-width: 640px) { .hero { padding: 2.5rem 1rem; } }
+
+# FILE: _includes/custom-head.html
+<link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
