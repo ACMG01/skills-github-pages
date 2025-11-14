@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Support us
+title: Support us | Donate 
 permalink: /support/
 ---
 Thanks for reading! If this project helps you, here are a few ways to support it.
