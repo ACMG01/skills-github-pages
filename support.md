@@ -18,6 +18,7 @@ permalink: /support/
     <h3>Monthly</h3>
     <p class="btn-row">
       <a class="btn" href="https://github.com/sponsors/ACMGLLC">GitHub Sponsors</a>
+      <br><br/>
       <a class="btn btn--ghost" href="https://www.patreon.com/YOUR_PATREON">Patreon</a>
     </p>
   </div>
